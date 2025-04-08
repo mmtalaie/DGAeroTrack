@@ -367,8 +367,8 @@ namespace DGAeroTrack
 
                 case PortState.close:
                     ClearList();
-                    serialPort = new SerialPort(SerialPortCmb.SelectedText);
-                    serialPort.BaudRate = int.Parse(BaudRateCmb.SelectedText);
+                    serialPort = new SerialPort(SerialPortCmb.SelectedItem.ToString());
+                    serialPort.BaudRate = int.Parse(BaudRateCmb.SelectedItem.ToString());
                     serialPort.Parity = Parity.None;
                     serialPort.StopBits = StopBits.One;
                     serialPort.DataBits = 5;
