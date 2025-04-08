@@ -27,6 +27,11 @@ namespace DGAeroTrack
         open,
         close
     }
+    enum DataType
+    {
+        message,
+        location
+    }
     public partial class Form1 : Form
     {
         readonly FormsPlot FormsPlotXY = new FormsPlot() { Dock = DockStyle.Fill };
@@ -387,9 +392,39 @@ namespace DGAeroTrack
         {
             string data = serialPort.ReadExisting();
 
-            var ts = UpdateLists(data);
+            string payload = GetPayload(data);
 
-            UpdatePlots();
+            DataType type = GetDataType(data);
+
+            if (type == DataType.location)
+            {
+                var ts = UpdateLists(payload);
+
+                UpdatePlots();
+            }
+            else
+            {
+                msgLbl.Text = payload;
+            }
+        }
+
+        private string GetPayload(string data)
+        {
+            return data.Substring(5);
+        }
+
+        private DataType GetDataType(string data)
+        {
+            string type = data.Substring(0, 5);
+            switch (data.ToLower())
+            {
+                case "[msg]":
+                    return DataType.message;
+                case "[loc]":
+                    return DataType.location;
+                default:
+                    throw new NotImplementedException("Wrong type of input");
+            }
         }
     }
 }

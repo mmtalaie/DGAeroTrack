@@ -54,6 +54,8 @@
             this.SerialPortCmb = new System.Windows.Forms.ComboBox();
             this.portLbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.msgLbl = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -304,11 +306,38 @@
             this.panel3.Size = new System.Drawing.Size(300, 161);
             this.panel3.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(129, 715);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Last message:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // msgLbl
+            // 
+            this.msgLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.msgLbl.AutoSize = true;
+            this.msgLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.msgLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.msgLbl.Location = new System.Drawing.Point(219, 715);
+            this.msgLbl.Name = "msgLbl";
+            this.msgLbl.Size = new System.Drawing.Size(0, 13);
+            this.msgLbl.TabIndex = 13;
+            this.msgLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 761);
+            this.Controls.Add(this.msgLbl);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.zyPanel);
@@ -358,6 +387,8 @@
         private System.Windows.Forms.ComboBox SerialPortCmb;
         private System.Windows.Forms.Label portLbl;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label msgLbl;
     }
 }
 
