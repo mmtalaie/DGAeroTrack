@@ -58,6 +58,7 @@ namespace DGAeroTrack
             lockObject = new object();
             playState = PlayState.stop;
             serialPortState = PortState.close;
+            serialPort = new SerialPort();
 
             yxPanel.Controls.Add(FormsPlotXY);
             zxPanel.Controls.Add(FormsPlotXZ);
